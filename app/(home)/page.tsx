@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Categories from "./components/categories"
 
 export default function Home() {
 
@@ -14,6 +15,10 @@ export default function Home() {
         className="h-auto w-full"
         sizes="100vh"
       />
+      <div className="mt-8 flex justify-center">
+        <Categories/>
+      </div>
     </div>
+
   )
 }
