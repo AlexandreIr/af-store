@@ -1,8 +1,8 @@
 import { ProductWithTotalPrice } from "@/helpers/product";
 import Image from "next/image";
 import Link from "next/link";
+import DiscountBadge from "./discount-badge";
 import { cn } from "@/lib/utils";
-import DiscountBadge from "./discount-bage";
 
 interface ProductItemProps {
   product: ProductWithTotalPrice;
@@ -39,7 +39,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
           {product.discountPercentage > 0 ? (
             <>
               <p className="truncate font-semibold">
-                R$ {(Number(product.basePrice)*(product.discountPercentage/100)).toFixed(2)}
+              R$ {(Number(product.basePrice)*(product.discountPercentage/100)).toFixed(2).replace('.',',')}
               </p>
 
               <p className="truncate text-xs line-through opacity-75">

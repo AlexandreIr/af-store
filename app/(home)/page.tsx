@@ -29,6 +29,15 @@ export default async function Home() {
       <div className="mt-8">
         <ProductList products={deals}/>
       </div>
+
+      <Image
+        src="/banner-home-2.png"
+        alt="Até 55% de desconto esse mês mouse"
+        height={0}
+        width={0}
+        className="h-auto w-full py-[1.875rem]"
+        sizes="100vh"
+      />
     </div>
 
   )

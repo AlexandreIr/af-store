@@ -45,7 +45,7 @@ const Header = () => {
                                 </Avatar>
                                 <div className="div div-col">
                                     <p className="font-medium">{data?.user?.name}</p>
-                                    <p className="text-sm opacity-75">Boas Compras</p>
+                                    <p className="text-sm opacity-75">Boas Compras!</p>
                                 </div>
                             </div>
                         </div>
