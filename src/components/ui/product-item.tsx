@@ -1,4 +1,4 @@
-import { ProductWithTotalPrice } from "@/helpers/product";
+import { ProductWithTotalPrice, computeProductTotalPrice } from "@/helpers/product";
 import Image from "next/image";
 import Link from "next/link";
 import DiscountBadge from "./discount-badge";
@@ -20,7 +20,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
           src={product.imageUrls[0]}
           height={0}
           width={0}
-          sizes="100vw"
+          sizes="100vh"
           className="h-auto max-h-[70%] w-auto max-w-[80%] object-contain"
           alt={product.name}
         />
@@ -39,7 +39,7 @@ const ProductItem = ({ product, className }: ProductItemProps) => {
           {product.discountPercentage > 0 ? (
             <>
               <p className="truncate font-semibold">
-              R$ {(Number(product.basePrice)*(product.discountPercentage/100)).toFixed(2).replace('.',',')}
+              R$ {(Number(product.basePrice)-Number(product.basePrice)*(product.discountPercentage/100)).toFixed(2).replace('.',',')}
               </p>
 
               <p className="truncate text-xs line-through opacity-75">
